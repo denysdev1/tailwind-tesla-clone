@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("../fonts/GothamBook.ttf")
+}
+
+* {
+  font-family: "Gotham Book", sans-serif;
+}
+
+@layer components {
+  .link {
+    @apply cursor-pointer font-semibold hover:opacity-75;
+  }
+}
+
+.scroller {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+
+.scroller section,
+.scroller footer {
+  scroll-snap-align: start;
+}
+
+@media screen(md) {
+  .scroller {
+    scroll-snap-type: none;
+  }
+}
